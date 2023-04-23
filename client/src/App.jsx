@@ -8,8 +8,8 @@ const App = () => {
     <BrowserRouter>
       <header
         className="w-full flex justify-between
-    items-center bg-white sm:px-8 px-4 py-4 border-b 
-    border-b-[#e6ebf4]"
+    items-center bg-black sm:px-8 px-4 py-4 border-b 
+    border-b-[#000000] "
       >
         <Link to="/">
           <img
@@ -22,14 +22,14 @@ const App = () => {
 
         <Link
           to="/create-post"
-          className="font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md"
+          className="font-inter font-medium bg-[#009b17] text-white px-4 py-2 rounded-lg"
         >
-          Create
+          Click Here to Generate 
         </Link>
       </header>
       <main
         className="sm:p-8 px-4 py-8
-          w-full bg-[#f9fafe] min=h-[calc(100vh-73px)]"
+          w-full bg-[#101010] min=h-[calc(100vh-73px)]"
       >
         <Routes>
           <Route path="/" element={<Home />} />

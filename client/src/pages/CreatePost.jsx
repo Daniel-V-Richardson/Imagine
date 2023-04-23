@@ -20,7 +20,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch("http://localhost:8080/api/v1/imagine", {
+        const response = await fetch("https://imagine-backend.onrender.com/api/v1/imagine", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:8080/api/v1/post", {
+        const response = await fetch("https://imagine-backend.onrender.com/api/v1/post", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -77,20 +77,20 @@ const CreatePost = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto">
+    <section className="max-w-7xl m-auto">
       <div>
         <h1
-          className="font-extrabold text-[#222328]
-        text-[32px]"
+          className="font-extrabold text-[#ffffff]
+        text-[42px]"
         >
-          Create
+          Generate Image using AI
         </h1>
         <p
-          className="mt-2 text-[#666e75] text-[16px]
-        max-w-[500px] "
+          className="mt-2 text-[#d4d4d4] text-[20px]
+        max-w-[800px] "
         >
-          Create imaginative and visually stunning images through <b>IMAGINE</b>{" "}
-          and share them with the community.
+          Create imaginative and visually stunning images through <b>imagine</b>{" "}
+          and share them with the <b>imagine community.</b>
         </p>
       </div>
       <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
@@ -114,8 +114,8 @@ const CreatePost = () => {
             handleSurpriseMe={handleSurpriseMe}
           />
           <div
-            className="relative bg-gray-50 border
-        border-gray-300 text-gray-900 text-sm rounded-lg
+            className="relative bg-gray-900 border
+        border-gray-900 text-gray-100 text-lg rounded-[50px]
         focus:ring-blue-500 focus:border-blue-500 w-64 p-3
         h-64 flex justify-center items-center"
           >
@@ -148,8 +148,8 @@ const CreatePost = () => {
         <div className="mt-5 flex gap-5">
           <button
             type="button"
-            className="text-white bg-green-700 font-medium 
-          rounded-md text-sm w-full sm:w-auto px-5 py-2.5 
+            className="text-white bg-green-600 font-bold 
+          rounded-lg text-md w-full sm:w-auto px-5 py-2.5 
           text-center"
             onClick={generateImage}
           >
@@ -157,16 +157,16 @@ const CreatePost = () => {
           </button>
         </div>
         <div className="mt-10">
-          <p className="mt-2 text-[#666e75] text-[14px]">
+          <p className="mt-2 text-[#ededed] text-[20px]">
             Once you have created the image you want, you can share it with
             others in the community
           </p>
           <button
             type="submit"
             className="mt-3 text-white bg-[#6469ff]
-          font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center  "
+          font-medium rounded-lg text-md  w-full sm:w-auto px-5 py-2.5 text-center  "
           >
-            {loading ? "Sharing..." : "Share with the community"}
+            {loading ? "Sharing..." : "Share with Imagine"}
           </button>
         </div>
       </form>
